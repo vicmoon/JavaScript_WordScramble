@@ -1,4 +1,46 @@
 body {
   background-color: black;
   color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.input {
+  width: 50%;
+  height: 50px;
+  font-size: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  letter-spacing: 0.5rem;
+}
+
+.button {
+  align-items: center;
+  margin-bottom: 20px;
+  height: 50px;
+  font-size: 18px;
+  background-color: #ffeccc;
+  color: black;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.gameArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.scoreBoard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  background-color: #ff9587;
+  border-radius: 20px;
+  padding: 20px;
 }
