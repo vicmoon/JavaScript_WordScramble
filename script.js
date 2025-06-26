@@ -54,8 +54,18 @@ output.style.display = 'none';
 // BUTTON EVENT LISTENER
 
 button.addEventListener('click', (e) => {
+  if (words.length <= 0) {
+    output.textContent =
+      'No more words left! Please refresh the page to play again.';
+    gameArea.textContent = `Game Over! Your final score is: ${game.score}`;
+    input.disabled = true;
+    button.style.display = 'none';
+    return;
+  }
+
   button.style.display = 'none';
   scoreBoard.style.display = 'block';
+  input.textContent = '';
   input.style.display = 'inline';
   output.style.display = 'block';
   input.disabled = false;
@@ -68,6 +78,7 @@ button.addEventListener('click', (e) => {
   game.selectedWord = words[0];
   game.selectedWord = words.shift();
   game.wordsLeft = words.length;
+
   game.scramble = sorter(game.selectedWord);
   output.style.fontSize = '3rem';
   input.setAttribute('maxlength', game.selectedWord.length);
