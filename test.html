@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table class="output"></table>
+    <script>
+      'https://docs.google.com/spreadsheets/d/1iKSP6Lf_qQrLYbEbbnNhKOz-un2gCfCPnlIkH4T3keU/edit?usp=sharing';
+
+      const url =
+        'https://docs.google.com/spreadsheets/d/1iKSP6Lf_qQrLYbEbbnNhKOz-un2gCfCPnlIkH4T3keU/gviz/tq?';
+
+      const output = document.querySelector('.output');
+
+      fetch(url)
+        .then((res) => res.text())
+        .then((rep) => {
+          const data = rep.substr(47).slice(0, -2);
+
+          const json = JSON.parse(data);
+          const row = document.createElement('tr');
+          output.append(row);
+
+          json.table.cols.forEach((main) => {
+            const container = document.createElement('tr');
+            output.append(c);
+            row.append(cell);
+          });
+          json.table.rows.forEach();
+        });
+    </script>
+  </body>
+</html>
